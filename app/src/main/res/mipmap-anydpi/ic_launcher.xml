@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 启动图标（自适应）：整幅位图作背景层。位图 = 用户选定的构图（GPT 草图，
+     2026-10-04），由 build/icon-compose 流程按 108dp 规范合成：
+     紫色铺满中央 72dp 可见区、白角只存在于遮罩永不可见的角落。
+     前景层为透明（图形已画在背景位图里）。monochrome 层已移除
+     （位图不适合主题图标着色，宁缺勿滥）。 -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_art" />
+    <foreground android:drawable="@android:color/transparent" />
+</adaptive-icon>

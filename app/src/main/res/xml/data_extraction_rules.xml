@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  禁止任何形式的系统备份/迁移（spec 4.5）。
+
+  allowBackup 已置 false，这里再显式排除一次作为双保险：
+  系统自动备份会把加密库文件同步上云，违背「本地不联网」的设计前提。
+  即便日后有人误开 allowBackup，这些排除规则仍然生效。
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+        <exclude domain="external" path="." />
+        <exclude domain="file" path="." />
+        <exclude domain="root" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+        <exclude domain="external" path="." />
+        <exclude domain="file" path="." />
+        <exclude domain="root" path="." />
+    </device-transfer>
+</data-extraction-rules>

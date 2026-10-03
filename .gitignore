@@ -1,0 +1,67 @@
+# ---- 构建产物 ----
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+build/
+/captures
+.externalNativeBuild
+.cxx
+
+# ---- Gradle ----
+.gradle/
+# 注意：gradle/wrapper/gradle-wrapper.jar 与 gradle/libs.versions.toml 必须入库
+
+# ---- 本机配置 ----
+local.properties
+
+# ---- IDE ----
+*.iml
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/deploymentTargetSelector.xml
+.idea/deploymentTargetDropDown.xml
+.idea/render.experimental.xml
+.DS_Store
+.kotlin/
+
+# ---- 密钥材料：绝不入库（spec 4.5）----
+# 签名密钥丢失 = 永久失去同身份升级能力；恢复密钥密文泄露 + 主密码被破 = 数据可解密。
+# 两者都必须走项目外的手动备份，不进版本控制。
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+/secrets/
+# 签名口令在这里（指向项目外的 keystore），同样绝不入库
+keystore.properties
+
+# ---- 导出产物（含真实笔记内容，属用户数据）----
+/exports/
+*.export.json
+# 导出物与恢复密钥备份的**真实默认文件名**（App 里写死的那些，见 ExportScreen/"noteone-export-"，
+# RecoveryKeyScreen 的 "noteone-recovery-key.txt"）。文档承诺"含真实笔记不入库"，
+# 这里必须与真实文件名逐字匹配——旧模式 *.export.json 对不上实际产物（2026-10-04 审计发现）。
+noteone-export-*.txt
+noteone-export-*.json
+noteone-recovery-key*.txt
+# App 内部密文的文件名：正常在 filesDir 里，不在仓库；防的是有人 run-as 抄出来落在仓库目录
+recovery-key.txt
+keystore-wrap.txt
+
+# ---- 崩溃/性能 ----
+*.hprof
+*.log
+.idea/inspectionProfiles

@@ -1,0 +1,16 @@
+# 统一换行符：仓库内一律 LF，避免 Windows/Linux 之间反复改写。
+* text=auto eol=lf
+
+# Windows 批处理必须 CRLF，否则 cmd.exe 执行出错
+*.bat text eol=crlf
+
+# tools/ 下的图标生成脚本不计入 GitHub 语言统计（项目本体是纯 Kotlin/Android）
+tools/*.py linguist-detectable=false
+
+# 二进制文件，禁止 git 做任何换行/编码转换
+*.webp binary
+*.png binary
+*.jpg binary
+*.jar binary
+*.jks binary
+*.keystore binary
